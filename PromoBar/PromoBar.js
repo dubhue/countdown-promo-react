@@ -40,7 +40,7 @@ class PromoBar extends React.Component {
                 <div className="col">
                   <div className="row">
                     <div className="col-sm-auto promoText">
-                      <span className="msg">{this.props.message}</span>{" "}
+                      <span className="msg">{this.props.message}</span>
                       <Expires expires={this.state.timeLeft} />
                     </div>
                     <PillButton cta={this.props.btnLabel} />
