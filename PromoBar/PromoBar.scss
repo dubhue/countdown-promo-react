@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap");
+
+$brand-blue: #18acf2;
+$white: #fefefe;
+
+$bar-height: 48px;
+$font-height: 13px;
+
+$break-small: 600px;
+.promo {
+  padding: 0;
+  a {
+    position: relative;
+    background-color: $brand-blue;
+    color: $white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: $font-height;
+    height: $bar-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 100%;
+    @media only screen and (max-width: $break-small) {
+      height: $bar-height * 2;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    .row {
+      width: 100%;
+      .col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > .row {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    .msg {
+      padding-right: $font-height / 3;
+    }
+    &:hover .pill {
+      background-color: darken($white, 5);
+      cursor: pointer;
+    }
+  }
+  .promoText {
+    display: flex;
+    @media only screen and (max-width: $break-small) {
+      justify-content: center;
+    }
+  }
+}
+.pillWrap {
+  @media only screen and (max-width: $break-small) {
+    display: flex;
+    justify-content: center;
+  }
+}
+.pill {
+  margin: 0 1rem;
+  color: $brand-blue;
+  background-color: $white;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: none;
+  padding: 0.125rem 1rem;
+  @media only screen and (max-width: $break-small){
+    margin: 1rem 1rem 0 1rem;
+  }
+}
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 1rem;
+  width: 2rem;
+  height: $bar-height;
+  appearance: none;
+  background: none;
+  border: none;
+  @media only screen and (max-width: $break-small) {
+      height: $bar-height * 2;
+    }
+  .ecks {
+    width: $font-height;
+    height: 3px;
+    background: $white;
+    position: absolute;
+    &.x1 {
+      transform: rotate(45deg);
+    }
+    &.x2 {
+      transform: rotate(-45deg);
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    & > * {
+      background: darken($white, 20);
+    }
+  }
+}
+.expires {
+  text-transform: uppercase;
+}
