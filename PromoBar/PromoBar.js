@@ -32,7 +32,7 @@ class PromoBar extends React.Component {
       }
     }
     render() {
-      return this.state.isOpen ? (
+      return this.state.isOpen && (this.state.timeLeft > 0) ? (
         <div className="promoWrap">
           <div className="promo container-fluid">
             <a href={this.props.link}>
