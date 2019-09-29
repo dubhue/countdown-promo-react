@@ -14,4 +14,4 @@ Component has functioning close button and responds to column layout on screens 
 
 See live implementation here: [https://codepen.io/peterbdub/pen/GRKaWYW](https://codepen.io/peterbdub/pen/GRKaWYW)
 
-The live implementation has generic "Product" name and link for obfuscation purposes. In production, the anchor link element would likely be replaced with a react-router Link element for in-app linking. Use Bootstrap 4 grid.
+The live implementation has generic "Product" name and link for obfuscation purposes. In production, the anchor link element would likely be replaced with a react-router Link element for in-app linking. Uses Bootstrap 4 grid.
