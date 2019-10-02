@@ -9,7 +9,8 @@ import Expires from './PromoBarParts/Expires'
 class PromoBar extends React.Component {
     state = {
       isOpen: false,
-      timeLeft: null
+      timeLeft: null,
+      interval: null
     };
     handleClose = () => {
       Cookies.set("sPromoBar")
@@ -18,19 +19,24 @@ class PromoBar extends React.Component {
       });
     };
     componentDidMount() {
-      if (!Cookies.get("sPromoBar")) {
+    if (!Cookies.get("sPromoBar")) {
+      this.setState({
+        isOpen: true
+      });
+      const end = new Date(this.props.endTime).getTime();
+      this.setState({
+        interval: setInterval(() => {
+        const now = new Date().getTime();
         this.setState({
-          isOpen: true
+          timeLeft: end - now
         });
-        const end = new Date(this.props.endTime).getTime();
-        setInterval(() => {
-          const now = new Date().getTime();
-          this.setState({
-            timeLeft: end - now
-          });
-        }, 1000);
-      }
+      }, 1000)
+      })
     }
+  }
+  componentWillUnmount(){
+    clearInterval(this.state.interval)
+  }
     render() {
       return this.state.isOpen && (this.state.timeLeft > 0) ? (
         <div className="promoWrap">
